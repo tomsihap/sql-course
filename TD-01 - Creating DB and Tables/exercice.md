@@ -87,13 +87,14 @@ MODIFY nom_colonne nouvelle_description;
 > PK stands for **Primary Key**
 ### 1. **Prepare** the request to create the following tables **without foreign keys** :
 
-**Artiste :** id (PK), nom, date de création.   
+**Artiste :** id (PK), nom, prénom.
+
 **Disque :** code (PK), libellé, année. 
 > Le code est la clé primaire de la relation. Attention au type de données du code !
 
 **Morceaux :**  id (PK), numero du morceau dans l'album, nom du morceau.
 
-**Emprunteur:** id (PK), nom, prénom, âge, ville où il habite, nombre d’heures enseignées.
+**Emprunteur:** id (PK), nom, prénom, âge, ville où il habite.
 
 **Adresse:** id (PK), nom et numéro de rue, nom de la ville, code postal.
 
