@@ -11,7 +11,7 @@
 1. You will **prepare** your request to create your first database. Create a DB as so :
 `CREATE DATABASE dbname`
 2. You will **prepare** your request by adding a charset to it :
-3. `CREATE DATABASE dbname CHARACTER SET 'utf-8'`
+3. `CREATE DATABASE dbname CHARACTER SET 'utf8'`
 4. You may **execute** the request.
 
 ## How To Delete a Database
