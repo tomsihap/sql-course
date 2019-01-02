@@ -9,7 +9,7 @@ VALUES ('val1', 'val2, '2019-01-02 12:00:00');
 /* Multiple Insert : */
 
 INSERT INTO Table (field1, field2, field3)
-VALUES ('val1', 'val2, '2019-01-02 12:00:00'),
+VALUES ('val1', 'val2', '2019-01-02 12:00:00'),
 ('val1', 'val2, '2019-01-02 12:00:00'),
 ('val1', 'val2, '2019-01-02 12:00:00')
 ('val1', 'val2, '2019-01-02 12:00:00');
