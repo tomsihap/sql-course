@@ -73,9 +73,13 @@
 ### 2. Add the relationships :
 
 1. Add (1-n) relationships to existing tables :
+
 **Disque :** id_artiste (FK)
+
 **Morceaux :**  id_disque (FK)
+
 **Emprunteur:** id_adresse (FK)
 
 2. Create a new table for the (n-n) relationship :
+
 **EmprunteurDisque:** id_emprunteur, code_disque
