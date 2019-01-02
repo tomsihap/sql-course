@@ -18,39 +18,66 @@ CREATE TABLE IF NOT EXISTS disquaire CHARACTER SET 'utf-8';
 ### 1. **Prepare** the request to create the following tables **without foreign keys** :
 
 ```
-CREATE TABLE `artistes` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nom` VARCHAR(45) NOT NULL,
-  `creation_date` YEAR NOT NULL,
-  PRIMARY KEY (`id`));
+
+DROP TABLE IF EXISTS Artistes;
+CREATE TABLE IF NOT EXISTS Artistes (
+        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+		title VARCHAR(70) NOT NULL,
+        style VARCHAR(40),
+        
+        PRIMARY KEY(id)
+
+    ) ENGINE=INNODB;
+
+    
+
+DROP TABLE IF EXISTS Albums;    
+CREATE TABLE IF NOT EXISTS Albums (
+	code_inv VARCHAR(6) NOT NULL,
+    title VARCHAR(50) NOT NULL,
+    release_date YEAR,
+
+	PRIMARY KEY (code_inv)
+    
+) ENGINE=INNODB;
 
 
-CREATE TABLE `disques` (
-  `code` VARCHAR(12) NOT NULL,
-  `libelle` VARCHAR(45) NOT NULL,
-  `creation_date` YEAR NOT NULL,
-  PRIMARY KEY (`code`));
+DROP TABLE IF EXISTS Titres;
+CREATE TABLE IF NOT EXISTS Titres (
 
-CREATE TABLE `morceauxs` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `ordre_album` TINYINT NOT NULL,
-  `name` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id`));
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	titre VARCHAR(60) NOT NULL,
+    plage TINYINT NOT NULL,
+    duree TIME,
+    
+    PRIMARY KEY (id)
+) ENGINE=INNODB;
 
 
-CREATE TABLE `emprunteurs` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nom` VARCHAR(50),
-  `prenom` VARCHAR(50),
-  `age` TINYINT,
-  PRIMARY KEY (`id`));
+DROP TABLE IF EXISTS Emprunteurs;
+CREATE TABLE IF NOT EXISTS Emprunteurs (
 
-CREATE TABLE `adresses` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `street` VARCHAR(255) NOT NULL,
-  `city` VARCHAR(30) NOT NULL,
-  `zip` VARCHAR(10) NOT NULL,
-  PRIMARY KEY (`id`));
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    firstname VARCHAR(40) NOT NULL, 
+    surname VARCHAR(40) NOT NULL,
+    birthdate DATE,
+    
+    PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+DROP TABLE IF EXISTS Adresses;
+CREATE TABLE IF NOT EXISTS Adresses (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    street VARCHAR(60),
+    zip CHAR(5),
+    city VARCHAR(40),
+    
+    PRIMARY KEY (id)
+) engine=INNODB;
+
+
+
+SHOW TABLES;
 ```
 
 ### 2. Add the relationships :
