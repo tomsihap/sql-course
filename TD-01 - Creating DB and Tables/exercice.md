@@ -54,26 +54,59 @@
 1. You can delete your table by **preparing** `DROP TABLE TableName;`.
 2. Edit your request to verify `IF EXISTS` then **execute** your request.
 
+## How To Modify A Table
+
+### Add a column
+
+```
+ALTER TABLE nom_table 
+ADD [COLUMN] nom_colonne description_colonne;
+```
+
+### Delete a column
+
+```
+ALTER TABLE nom_table 
+DROP [COLUMN] nom_colonne;
+```
+
+### Update a column
+```
+ALTER TABLE nom_table 
+CHANGE ancien_nom nouveau_nom description_colonne;
+```
+
+### Update a column without modifying the name
+```
+ALTER TABLE nom_table 
+MODIFY nom_colonne nouvelle_description;
+```
+
 
 ## Exercices
 > PK stands for **Primary Key**
 ### 1. **Prepare** the request to create the following tables **without foreign keys** :
 
-**Artiste :** id (PK), nom, prénom.
+**Artiste :** id (PK), nom, date de création.
 **Disque :** code (PK), libellé, année. 
 > Le code est la clé primaire de la relation. Attention au type de données du code !
 
 **Morceaux :**  id (PK), numero du morceau dans l'album, nom du morceau.
 
 **Emprunteur:** id (PK), nom, prénom, âge, ville où il habite, nombre d’heures enseignées.
+
 **Adresse:** id (PK), nom et numéro de rue, nom de la ville, code postal.
 
 ### 2. Add the relationships :
 
 1. Add (1-n) relationships to existing tables :
+
 **Disque :** id_artiste (FK)
+
 **Morceaux :**  id_disque (FK)
+
 **Emprunteur:** id_adresse (FK)
 
 2. Create a new table for the (n-n) relationship :
+
 **EmprunteurDisque:** id_emprunteur, code_disque
