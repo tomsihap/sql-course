@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS disquaire CHARACTER SET 'utf-8';
 ```
 
 DROP DATABASE IF EXISTS disquaire;
-CREATE DATABASE IF NON EXISTS disquaire CHARACTER SET 'utf8';
-use disquaire;
+CREATE DATABASE IF NOT EXISTS disquaire CHARACTER SET 'utf8';
+USE disquaire;
 
 CREATE TABLE IF NOT EXISTS Artistes (
         id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -147,6 +147,6 @@ CREATE TABLE IF NOT EXISTS albums_has_emprunteurs (
     REFERENCES disquaire.emprunteurs (id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ENGINE = InnoDB;
 ```
 
