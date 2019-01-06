@@ -6,7 +6,7 @@
 1. Create your working database.
 
 ```
-CREATE TABLE IF NOT EXISTS disquaire CHARACTER SET 'utf-8';
+CREATE DATABASE IF NOT EXISTS disquaire CHARACTER SET 'utf-8';
 ```
 
 # Creating Tables
